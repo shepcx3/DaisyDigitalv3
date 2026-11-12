@@ -1,0 +1,18 @@
+/* team page */
+.team { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 6vw, 80px) clamp(28px, 5vw, 72px); padding-bottom: var(--section); }
+.team > :nth-child(even) { margin-top: clamp(0px, 10vw, 140px); }
+@media (max-width: 640px) { .team { grid-template-columns: 1fr; } .team > :nth-child(even) { margin-top: 0; } }
+
+/* contact + careers: text beside the form */
+.formPage { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(40px, 7vw, 112px); padding-top: clamp(56px, 8vw, 112px); padding-bottom: var(--section); }
+.formIntro { max-width: 38ch; }
+.formIntro :global(.lead) { margin-top: 24px; }
+.direct { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); display: grid; gap: 6px; }
+.direct span { font-size: 0.9rem; color: var(--ink-soft); }
+.formCard { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 4vw, 48px); }
+@media (max-width: 860px) { .formPage { grid-template-columns: 1fr; } }
+
+/* small screens: thanks + not found */
+.screen { min-height: 62vh; display: grid; place-content: center; justify-items: center; text-align: center; gap: 20px; padding-block: var(--section); }
+.screen svg { color: var(--accent); }
+.screen p { max-width: 40ch; }

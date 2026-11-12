@@ -1,0 +1,37 @@
+/* inner page title */
+.pageHead { padding-top: clamp(56px, 8vw, 112px); padding-bottom: clamp(40px, 5vw, 64px); }
+.pageIntro { max-width: 46ch; margin-top: 24px; }
+
+/* work tile */
+.tile { display: grid; gap: 18px; text-decoration: none; color: var(--ink); }
+.tileImg { display: block; overflow: hidden; border-radius: var(--radius); background: var(--mist); aspect-ratio: 4 / 5; }
+.tileImg img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease); }
+.tile:hover .tileImg img { transform: scale(1.035); }
+.tileText { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.tileName { font-family: var(--font-display); font-size: clamp(1.8rem, 2.8vw, 2.4rem); line-height: 1.1; }
+.tileKind { color: var(--ink-soft); font-size: 0.95rem; }
+.tileMore { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem; color: var(--accent); margin-top: -6px; }
+.tileMore :global(.arrow) { transition: transform 220ms var(--ease); }
+.tile:hover .tileMore :global(.arrow) { transform: translateX(3px); }
+
+/* team card */
+.member { display: grid; align-content: start; }
+.portrait {
+  aspect-ratio: 4 / 5; border-radius: var(--radius); margin-bottom: 20px; display: grid; place-items: center;
+  background: linear-gradient(160deg, var(--mist), var(--lilac));
+}
+.portrait span { font-family: var(--font-display); font-style: italic; font-size: clamp(4rem, 8vw, 6rem); color: color-mix(in srgb, var(--accent) 55%, transparent); }
+.memberName { font-size: 1.75rem; }
+.memberRole { color: var(--ink-soft); margin-top: 4px; font-size: 0.95rem; }
+.memberBio { margin-top: 14px; max-width: 40ch; }
+
+/* closing call to action */
+.cta { background: var(--ink); color: var(--on-dark); padding: var(--section) 0; }
+.ctaInner { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: end; }
+.ctaInner h2 { max-width: 12ch; }
+.ctaBody { color: color-mix(in srgb, var(--on-dark) 82%, transparent); font-size: 1.15rem; max-width: 44ch; }
+.ctaActions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 32px; }
+.ctaMail { color: var(--on-dark); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--on-dark) 40%, transparent); }
+.ctaMail:hover { text-decoration-color: currentColor; }
+.cta + footer { border-top: 1px solid color-mix(in srgb, var(--on-dark) 12%, transparent); }
+@media (max-width: 760px) { .ctaInner { grid-template-columns: 1fr; } }

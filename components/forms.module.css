@@ -1,0 +1,24 @@
+.form { display: grid; gap: 26px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.field { display: grid; gap: 8px; align-content: start; }
+.field label { font-size: 0.9rem; font-weight: 600; }
+.optional { font-weight: 400; color: var(--ink-soft); }
+.field input, .field select, .field textarea {
+  width: 100%; font: inherit; color: var(--ink); background: #fff;
+  border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: var(--radius);
+  padding: 13px 14px; min-height: 50px; transition: border-color 200ms var(--ease), box-shadow 200ms var(--ease);
+}
+.field textarea { resize: vertical; min-height: 140px; }
+.field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--ink-soft) 50%), linear-gradient(135deg, var(--ink-soft) 50%, transparent 50%); background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 40px; }
+.field input:hover, .field select:hover, .field textarea:hover { border-color: color-mix(in srgb, var(--ink) 40%, transparent); }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
+.field [aria-invalid="true"] { border-color: #a3124d; }
+.field input::placeholder { color: color-mix(in srgb, var(--ink-soft) 70%, transparent); }
+.file { padding: 10px !important; background: var(--paper) !important; }
+.file::file-selector-button { font: inherit; font-weight: 600; margin-right: 14px; padding: 8px 16px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); background: #fff; color: var(--ink); cursor: pointer; }
+.error { font-size: 0.9rem; color: #a3124d; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 6px; }
+.actions button:disabled { opacity: 0.6; cursor: progress; }
+.hint { font-size: 0.9rem; color: var(--ink-soft); max-width: 40ch; }
+.status { min-height: 1.5em; font-weight: 500; }
+@media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
